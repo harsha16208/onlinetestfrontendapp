@@ -1,0 +1,989 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  text-decoration: none;
+}
+
+.main-body {
+  height: 100%;
+}
+
+.sidebar {
+  width: 100%;
+}
+
+.sidebar_menu_icon{
+  cursor: pointer;
+}
+
+/*........................*/
+.candidateSidebarContainer {
+  background-color: #19232b;
+  width: 25%;
+  float: left;
+  height: 100vh;
+}
+
+.candidateSidebarContainerTop{
+  background-color: #19232b;
+  min-width: 250px;
+  float: left;
+  height: 100vh;
+  z-index: 20;
+  position: absolute;
+  left: 0;
+  top:0;
+}
+
+.organizationSidebarContainerTop{
+  background-color: #19232b;
+  min-width: 250px;
+  float: left;
+  height: 100vh;
+  z-index: 20;
+  position: absolute;
+  left: 0;
+  top:0;
+}
+
+.candidateSidebarContainer a {
+  color: #fff;
+}
+
+
+.mainContainer {
+  float: left;
+  width: 80%;
+  height: 100vh;
+  background-color: #ecf0f3;
+}
+
+.clr-fix {
+  clear: both;
+}
+
+.Navbar {
+  background-color: #1a9be1;
+  padding: 15px;
+  height: 10vh;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.mainContentContainer {
+  padding: 15px;
+  height: 80vh;
+  overflow-y: scroll;
+}
+
+
+.formErrors {
+  color: red;
+}
+
+.examTitle {
+  color: rgb(120, 120, 120)
+}
+
+.RegisteredStudentsCard {
+  background: linear-gradient(25deg, #ef146a, #fa4e20);
+}
+
+.QuestionsToBePostedCard {
+  background: linear-gradient(25deg, #31b87b, #68c158);
+}
+
+.ExamsCreatedCard {
+  background: linear-gradient(25deg, #fb4c17, #f89f2e);
+}
+
+.QuestionsPostedCard {
+  background: linear-gradient(25deg, #4f35dc, #3759ee);
+}
+
+.HomeCard {
+  height: 100px;
+  width: 220px;
+  font-size: 18px;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+
+}
+
+.HomeCard .title,
+.HomeCard .value {
+  color: rgb(255, 255, 255);
+}
+
+.homeContainer {
+  overflow-y: hidden;
+}
+
+.title {
+  color: rgb(120, 120, 120)
+}
+
+.filterResultsContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.candidateSidebarContainer {
+  height: 100vh;
+  background-color: #19232b;
+  width: 20%;
+  float: left;
+  display: flex;
+  justify-content: center;
+
+}
+
+
+.sidebarName {
+  color: rgb(2555, 255, 255);
+  cursor: pointer;
+}
+
+.sidebarOptionsList {
+  list-style: none;
+  padding: 15px;
+}
+
+.sidebarOption {
+  padding: 18px 0px;
+  height: 30px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+
+.sidebarOptionActive {
+  padding: 18px 0px;
+  height: 30px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+.sidebarOptionActive a {
+  text-decoration: None;
+  color: #72c1d5;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  width: 95%;
+  padding: 0px 16px;
+}
+
+.sidebarOption a {
+  text-decoration: None;
+  color: #b9bdc3;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  width: 95%;
+  padding: 0px 16px;
+}
+
+.sidebarOption a:hover {
+  color: #72c1d5;
+}
+
+.sidebaroptiontitle {
+  padding-left: 8px;
+}
+
+.sidebarNameContainer {
+  background-color: #24313d;
+  height: 80px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.LogoutButtonContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.candidateLogoutText {
+  font-size: 25px;
+  color: #fff;
+  padding: 3px;
+}
+
+.mainContainerSidebarClose {
+  float: left;
+  width: 100%;
+  height: 100vh;
+  background-color: #ecf0f3
+}
+
+.ApplyForExam {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.examDetailsContainer {
+  padding: 20px;
+}
+
+.applyButtonContainer {
+  padding: 10px 30px;
+  text-align: center;
+}
+
+.examDetailsExamHome {
+  padding: 30px;
+}
+
+.examDetailsContainerExamHome{
+  background-color: #19232b;
+  height: 100vh;
+  width: 100%;
+  overflow-y: scroll;
+}
+
+.examContainer {
+  height: 100vh;
+  width: 100%;
+  background-color: #ecf0f3;
+}
+
+.questionBarContainer {
+  width: 25%;
+  height: 100vh;
+  overflow-y: scroll;
+  background-color: #19232b;
+  float: left;
+  display: flex;
+  align-items: flex-start;
+}
+
+.questionContainerContainer {
+  width: 75%;
+  height: 100vh;
+  overflow-y: scroll;
+  float: left;
+  /* -webkit-user-select: none;
+  -moz-user-select: -moz-none;
+  -ms-user-select: none;
+  user-select: none; */
+}
+
+.questionBar {
+  padding: 0px 15px;
+  height: 80%;
+  width: 100%;
+}
+
+.questionBarsectionContainer {
+  padding: 15px;
+  margin: 20px 0px;
+  border: 1px solid gray;
+  background-color: #24313d;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-items: flex-start;
+  justify-content: space-around;
+}
+
+.questionNumberUnanswered {
+  cursor: pointer;
+  background-color: white;
+  z-index: 2;
+  padding: 3px;
+  color: black;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 10%;
+}
+
+.currentQuestionNumber {
+  cursor: pointer;
+  background-color: purple;
+  z-index: 2;
+  padding: 3px;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 10%;
+}
+
+.questionNumberAnswered {
+  cursor: pointer;
+  background-color: green;
+  z-index: 2;
+  padding: 3px;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 10%;
+}
+
+.questionNumberReviewed {
+  cursor: pointer;
+  background-color: orange;
+  z-index: 2;
+  padding: 3px;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 10%;
+}
+
+.questionNumberUnansweredAndVisited {
+  cursor: pointer;
+  background-color: red;
+  z-index: 2;
+  padding: 3px;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 10%;
+}
+
+.sectionName {
+  color: white;
+  padding: 5px;
+}
+
+.questionContainer {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.questionDetails {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 20px;
+  color: rgb(120, 120, 120);
+}
+
+.HelpButtonContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+}
+
+.optionContainer {
+  width: 80%;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 4%;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.option {
+  width: 100%;
+  padding: 8px;
+  background-color: transparent;
+  text-align: left;
+  border: none;
+  cursor: pointer;
+}
+
+.optionContainer:hover {
+  background-color: #90EE90;
+}
+
+.optionSelected {
+  width: 80%;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 4%;
+  background-color: #90EE90;
+  cursor: pointer;
+}
+
+
+.questionAndOption {
+  padding: 40px 20px;
+}
+
+.optionButtonContainer {
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.question {
+  font-size: 18px;
+  padding: 10px;
+  cursor: default;
+}
+
+.answerSubmissionLoading {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+
+
+.submissionInfo {
+  color: green;
+}
+
+/* .lastQuestionOptionsContainer{
+
+} */
+
+.infodiv {
+  height: 20px;
+  width: 20px;
+  margin-right: 20px;
+}
+
+
+.markAsReview {
+  background-color: orange;
+}
+
+.answered {
+  background-color: green;
+}
+
+.currentQuestion {
+  background-color: purple;
+}
+
+.visitedAndUnanswered {
+  background-color: red;
+}
+
+.Unvisited {
+  border: 1px solid black;
+  background-color: white;
+}
+
+.exam-info {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: #ecf0f3;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.infodivContainer{
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  align-items: center;
+}
+
+.result {
+  height: 20px;
+  width: 20px;
+  text-align: center;
+  color: white;
+}
+
+.qualified {
+  background-color: green;
+}
+
+.notQualified {
+  background-color: red;
+}
+
+.searchByExamId {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.filterinfo {
+  text-align: center;
+  font-size: 18px;
+}
+
+.test {
+  height: 65vh;
+  overflow-y: scroll;
+}
+
+
+.organizationSidebarContainer {
+  width: 20%;
+  height: 100vh;
+  float: left;
+  background-color: #19232b;
+}
+
+.CreateExamContainer {
+  height: 75vh;
+  overflow-y: scroll;
+  padding: 15px;
+}
+
+.postquestionContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 20px;
+}
+
+.searchResults {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 5px;
+  align-items: center;
+}
+
+.ModalOverlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: rgb(0, 0, 0, 0.7);
+  z-index: 20;
+}
+
+.ModalContainer {
+  background-color: #fff;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 50px;
+  z-index: 20;
+}
+
+
+.credentialsContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.ButtonsContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 30px 0px 0px 0px;
+}
+
+.credentialsInfo {
+  color: #19232b;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 10px;
+}
+
+.ModalButton {
+  padding: 10px;
+  border: none;
+  font-size: 16px;
+  color: white;
+  border-radius: 10%;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.ModalButton:hover {
+  color: #19232b;
+}
+
+
+.CloseButton {
+  background-color: red;
+}
+
+.ConfirmButton {
+  background-color: green;
+}
+
+.submitModalInfo {
+  color: #19232b;
+  font-weight: 600;
+  font-size: 22px;
+}
+
+::selection {
+  color: none;
+  background: none;
+}
+
+/* For Mozilla Firefox */
+::-moz-selection {
+  color: none;
+  background: none;
+}
+
+.filterInfo-TriggerMails {
+  font-size: 18px;
+  font-weight: bold;
+  color: green;
+}
+
+.ExamDetailsContainer-TriggerMails {
+  height: 60vh;
+  overflow-y: scroll;
+}
+
+
+.sendMailButton {
+  padding: 10px;
+  border: none;
+  font-size: 16px;
+  background-color: #1a9be1;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 10%;
+}
+
+.sendMailButton:hover {
+  zoom: 98%;
+}
+
+.filterContainer-TriggerMails {
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+/* .mailContainer {} */
+
+.mailInfo {
+  font-size: 18px;
+  height: 9vh;
+}
+
+.examId-mailInfo {
+  color: #19232b;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.backButton-mailContainer {
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  color: red;
+  cursor: pointer;
+}
+
+.backButton-UpdateDetails{
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  color: red;
+  cursor: pointer;
+}
+
+.mailArea {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 70%;
+}
+
+.mailField {
+  background-color: #fff;
+}
+
+.sendButton-MailContainer {
+  width: 160px;
+  margin: 10px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 20px;
+  border: none;
+  background-color: #1a9be1;
+  border-radius: 5%;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.sendButton-MailContainer:hover{
+  background-color: rgb(26, 155, 225, 0.9);
+}
+
+.sendButtonText{
+  margin: 0px 5px;
+}
+
+.otpTimerInfo{
+  font-size: 18px;
+  font-weight: bold;
+  color: #24313d;
+}
+
+.signInLink{
+  color: #19232b;
+  font-size: 16px;
+}
+
+.signInLink:hover{
+  color: blue;
+}
+
+.register {
+  height: 100vh;
+  background-color: #19232b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.register_card {
+  background-color: rgb(255, 255, 255);
+  /* height: calc(100vh - 20vh); */
+  width: calc(100vw - 50vw);
+  display: flex;
+  flex-direction: column;
+  height: 90vh;
+  overflow-y: scroll;
+  /* -ms-overflow-style: none;
+  scrollbar-width: none; */
+  border: 1px solid gray;
+}
+
+/* .register_card::-webkit-scrollbar {
+  display: none;
+} */
+
+.register_info{
+  padding: 5px;
+  text-align: center;
+}
+
+.register_card_top {
+  /* flex: 1; */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.register_card_bottom {
+  /* flex: 2; */
+  display: flex;
+  justify-content: center;
+  /* overflow-y: scroll; */
+}
+
+.role_option {
+  cursor: pointer;
+  color: rgb(120, 120, 120);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+.role_option_active{
+  cursor: pointer;
+  color: white;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  background-color: #1a9be1;
+}
+
+.register_button_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 7px;
+}
+
+.register_button {
+  background-color: #1a9be1;
+  color: rgb(255, 255, 255);
+  font-weight: 300;
+  border: none;
+  cursor: pointer;
+  padding: 20px;
+  font-size: 16px;
+  border-radius: 10%;
+  margin: 10px 0px;
+}
+
+.registrationform{
+  width: 70%;
+  padding: 20px;
+}
+
+.updateDetailsForm{
+  padding: 20px;
+}
+
+.passwordUpdationContainer{
+  display: flex;
+  flex-direction: column;
+}
+
+.forgotPasswordContainer{
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  justify-content: center;
+}
+
+.forgotPasswordform{
+  display: flex;
+  flex-direction: column;
+  height: 35vh;
+  width: 25vw;
+  padding: 30px;
+  align-items: center;
+  justify-content: space-evenly;
+  border: 1px solid gray;
+}
+
+.otpContainer{
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  justify-content: center;
+}
+
+.otpInfo{
+  display: flex;
+  flex-direction: column;
+  height: 35vh;
+  width: 25vw;
+  padding: 30px;
+  align-items: center;
+  justify-content: space-evenly;
+  border: 1px solid gray;
+}
+
+.PasswordChangeContainer{
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  justify-content: center;
+}
+
+.PasswordChangeForm{
+  display: flex;
+  flex-direction: column;
+  height: 35vh;
+  width: 25vw;
+  padding: 30px;
+  align-items: center;
+  justify-content: space-evenly;
+  border: 1px solid gray;
+}
+
+.NoAccessOrg{
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.adminPanelLoading{
+  height: 100vw;
+  width: 100vw;
+}
+
+.AdminPanelContainer{
+  padding: 20px;
+}
+
+
+.deleteButton{
+  color: red;
+  cursor: pointer;
+}
+
+
+.adminPanelInfoAndFilter{
+  padding: 10px;
+}
+
+
+.filterFormAdminPanel{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.logoutContainerAdminPanel{
+  text-align: end;
+}
+
+.sidebarTopContainer{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 50px;
+}
+
+.sidebarTopClose{
+  background-color: red;
+  color: white;
+  padding: 10px;
+  border: none;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.sample{
+  font-family: 'Times New Roman', Times, serif;
+  background-color: #fff;
+  width: 80%;
+  padding: 20px;
+}

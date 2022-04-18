@@ -1,0 +1,18 @@
+
+.register_title {
+    color: rgb(120, 120, 120);
+}
+
+
+
+
+.formErrors {
+    color: red;
+}
+
+.registrationform_container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}

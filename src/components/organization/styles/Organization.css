@@ -1,0 +1,40 @@
+
+.createExamButtonContainer{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.createExam_formErrors{
+    color: red;
+}
+
+.createexam_topics{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.postQuestionsContainer{
+    width: 80%;
+}
+
+.PostQuestionsButtonContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Questions_Buttons_container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.QuestionTitle{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: rgb(120, 120, 120);
+}
