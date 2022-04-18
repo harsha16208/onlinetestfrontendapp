@@ -251,7 +251,6 @@ export default function Exam(props) {
 
     }
 
-
     /*This method handles the logic when user tries to take mouse from current document
     */
     const handleMouseLeave = (e) => {
