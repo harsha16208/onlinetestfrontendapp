@@ -8,6 +8,8 @@ import { Link } from "react-router-dom";
 import { Redirect } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import LoginActionCreator from "../../store/actioncreators/LoginAction";
+import { useEffect } from "react";
+import { CircularProgress } from "@mui/material";
 
 export default function Login(props) {
 
@@ -25,28 +27,11 @@ export default function Login(props) {
     const [invalidCredentials, setInvalidCredentials] = useState(false)
     const [login, setLogin] = useState({})
     const [loading, setLoading] = useState(false)
+    const [loginClicked, setLoginClicked] = useState(false)
 
 
-    useEffect(()=>{
-        
-    })
-
-    const validate = () => {
-        if (username === "" && password === "") {
-            setErrors("Username and Password required")
-
-        }
-        else {
-            if (username === "") {
-                setErrors("Username required")
-            }
-
-            if (password === "") {
-                setErrors("Password required")
-            }
-        }
-        if (username !== "" && password !== "") {
-            setErrors("")
+    useEffect(() => {
+        if (loginClicked && errors.trim().length === 0) {
             axios.post("/authenticate", {
                 "username": username,
                 "password": password
@@ -59,10 +44,52 @@ export default function Login(props) {
                     const jwtToken = data["jwtToken"]
                     localStorage.setItem("jwtToken", jwtToken)
                     setLogin({ role: dt.data.role })
+                    setLoginClicked(false)
+                    setLoading(false)
                 })
                 .catch(error => {
                     setInvalidCredentials(true)
+                    setLoginClicked(false)
+                    setLoading(false)
                 })
+        }
+
+    }, [loginClicked, errors])
+
+    const validate = () => {
+
+        let errorMessage = ""
+
+        if (username === "" && password === "") {
+            errorMessage = "Username and password required"
+
+        }
+        else {
+            if (username === "") {
+                errorMessage = "Username required"
+            }
+
+            if (password === "") {
+                errorMessage = "Password required"
+            }
+        }
+
+        return errorMessage;
+
+    }
+
+    const handleLogin = () => {
+        const result = validate()
+        if (result.trim().length === 0) {
+            setErrors("")
+            setLoading(true)
+            setTimeout(() => {
+                setLoginClicked(true)
+            }, 1000)
+
+        } else {
+            setErrors(result)
+            setLoading(false)
         }
     }
 
@@ -120,9 +147,13 @@ export default function Login(props) {
                         <span><Link to="/forgotpassword">Forgot password?</Link></span>
                         <span><Link to={"/register"}>Register</Link></span>
                     </div>
-                    <div className="login_button_container">
-                        <button type="button" onClick={validate} className="login_button">Login</button>
-                    </div>
+                    {
+                        loading ?
+                            <CircularProgress color="secondary" /> :
+                            <div className="login_button_container">
+                                <button type="button" onClick={handleLogin} className="login_button">Login</button>
+                            </div>
+                    }
                 </div>
             </div>
         </div>
