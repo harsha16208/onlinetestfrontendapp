@@ -24,6 +24,12 @@ export default function Login(props) {
     const [openSnackbar, setOpenSnackbar] = useState(false)
     const [invalidCredentials, setInvalidCredentials] = useState(false)
     const [login, setLogin] = useState({})
+    const [loading, setLoading] = useState(false)
+
+
+    useEffect(()=>{
+        
+    })
 
     const validate = () => {
         if (username === "" && password === "") {
