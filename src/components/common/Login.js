@@ -28,23 +28,7 @@ export default function Login(props) {
     const [loading, setLoading] = useState(false)
     const [loginClicked, setLoginClicked] = useState(false)
 
-
-    // useEffect(() => {
-
-    //     const handleResize = () => {
-    //         if(window.innerWidth < 480) {
-    //             setView("large_login_card")
-    //         } else {
-    //             setView("small_login_card")
-    //         }
-    //     }
-
-
-    //     window.addEventListener("resize", handleResize)
-
-    //     return () => window.removeEventListener("resize", handleResize)
-    // }, [])
-
+    document.title = "Login page"
 
 
     useEffect(() => {

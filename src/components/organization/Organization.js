@@ -1,10 +1,10 @@
 import "./styles/Organization.css"
 import { Link } from "react-router-dom";
 import Sidebar from "./Sidebar";
-import LogoutTwoToneIcon from '@mui/icons-material/LogoutTwoTone';
 import MenuTwoToneIcon from '@mui/icons-material/MenuTwoTone';
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import PowerSettingsNewIcon from '@mui/icons-material/PowerSettingsNew';
 import ExamDetailsAction from "../../store/actioncreators/ExamDetailsAction";
 import axios from "axios";
 import React from "react";
@@ -75,7 +75,7 @@ export default function Organization(props) {
     return (
         <div className="main-body">
             {sidebarOpen ?
-                <div className={sidebarTop ? "organizationSidebarContainerTop" :"organizationSidebarContainer"}>
+                <div className={sidebarTop ? "organizationSidebarContainerTop" : "organizationSidebarContainer"}>
                     <Sidebar location={location} sidebarTop={sidebarTop} setSidebarOpen={setSidebarOpen} />
                 </div> :
                 null}
@@ -87,11 +87,8 @@ export default function Organization(props) {
                             onClick={() => setSidebarOpen(!sidebarOpen)}
                         />
                     </div>
-                    <div className="LogoutButtonContainer">
-                        <Link to={"/logout"}>
-                            <LogoutTwoToneIcon fontSize="large" style={{ color: "#fff" }} />
-                            <span className="candidateLogoutText">Logout</span>
-                        </Link>
+                    <div className='logoutContainer'>
+                        <Link to="/logout"><PowerSettingsNewIcon style={{ color: "white", fontSize: "30px", fontWeight: "800", padding: "20px" }} /> </Link>
                     </div>
                 </div>
                 <div className="mainContentContainer">

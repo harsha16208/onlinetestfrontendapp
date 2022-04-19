@@ -973,13 +973,20 @@ body {
   align-items: center;
 }
 
-.logoutContainerAdminPanel {
+.logoutContainer {
   text-align: end;
-
 }
 
-.logoutContainerAdminPanel a {
+.logoutContainer a {
   color: #19232b;
+}
+
+.logoutContainer a:hover {
+  color: red;
+}
+
+.logout_link {
+  color: white;
 }
 
 

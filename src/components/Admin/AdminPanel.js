@@ -3,9 +3,8 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import DeleteForeverOutlinedIcon from '@mui/icons-material/DeleteForeverOutlined';
 import AuthenticationModal from './AuthenticationModal';
-import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import LogoutIcon from '@mui/icons-material/Logout';
+import PowerSettingsNewIcon from '@mui/icons-material/PowerSettingsNew';
 import FilterAltOutlinedIcon from '@mui/icons-material/FilterAltOutlined';
 
 function AdminPanel() {
@@ -100,8 +99,8 @@ function AdminPanel() {
 
     return (
         <div className='AdminPanelContainer'>
-            <div className='logoutContainerAdminPanel'>
-                <Link to="/logout" style={{ fontSize: "25px", fontWeight: "bold", padding: "20px" }}><LogoutIcon /> Logout</Link>
+            <div className='logoutContainer'>
+                <Link to="/logout"><PowerSettingsNewIcon style={{ fontSize: "30px", fontWeight: "800", padding: "20px" }}/> </Link>
             </div>
             <AuthenticationModal isModalOpen={isAuthenticationModalOpen}
                 setIsModalOpen={setAuthenticationModalOpen}

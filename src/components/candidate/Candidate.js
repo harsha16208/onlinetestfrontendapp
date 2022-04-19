@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Sidebar from "./Sidebar";
-import LogoutTwoToneIcon from '@mui/icons-material/LogoutTwoTone';
+import PowerSettingsNewIcon from '@mui/icons-material/PowerSettingsNew';
 import MenuTwoToneIcon from '@mui/icons-material/MenuTwoTone';
 
 
@@ -28,7 +28,7 @@ export default function Candidate({ component }) {
         handleResize()
         window.addEventListener("resize", handleResize)
 
-        return ()=>window.removeEventListener("resize", handleResize)
+        return () => window.removeEventListener("resize", handleResize)
     }, [])
 
 
@@ -46,11 +46,8 @@ export default function Candidate({ component }) {
                             onClick={() => setSidebarOpen(!sidebarOpen)}
                         />
                     </div>
-                    <div className="LogoutButtonContainer">
-                        <Link to={"/logout"}>
-                            <LogoutTwoToneIcon fontSize="large" style={{ color: "#fff" }} />
-                            <span className="candidateLogoutText">Logout</span>
-                        </Link>
+                    <div className='logoutContainer'>
+                        <Link to="/logout"><PowerSettingsNewIcon sx={{ color: "white", fontSize: "30px", fontWeight: "800", padding: "20px" }} /> </Link>
                     </div>
                 </div>
                 <div className="mainContentContainer">
