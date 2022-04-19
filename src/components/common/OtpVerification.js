@@ -20,6 +20,7 @@ export default function OtpVerification() {
     const [otpError, setOtpError] = useState("")
     const [loading, setLoading] = useState(false)
     const [verifyClicked, setVerifyClicked] = useState(false)
+    const [errorData, setErrorData] = useState("")
 
 
     useEffect(() => {
@@ -98,12 +99,26 @@ export default function OtpVerification() {
     }
 
     const handleVerify = () => {
+        const result = validateOtp()
+        console.log(result)
+        if (!result) {
+            setErrorData("*required")
+            return
+        }
+        setErrorData("")
         setLoading(true)
         setTimeout(() => {
             setOtp(tempOtp)
             setVerifyClicked(true)
         }, 1000)
 
+    }
+
+    const validateOtp = () => {
+        if (tempOtp === "") {
+            return false
+        }
+        return true
     }
 
     if (verified) {
@@ -113,11 +128,11 @@ export default function OtpVerification() {
     return (
         <div className="otpVerificationContainer">
             <div className="otpVerification">
-                    <Snackbar anchorOrigin={{ vertical: "top", horizontal: "center" }} open={otpError.trim().length !== 0}
-                    autoHideDuration = {10000} onClose={()=>setOtpError("")}
-                    >
-                        <Alert severity="error" variant="filled">{otpError}</Alert>
-                    </Snackbar>
+                <Snackbar anchorOrigin={{ vertical: "top", horizontal: "center" }} open={otpError.trim().length !== 0}
+                    autoHideDuration={10000} onClose={() => setOtpError("")}
+                >
+                    <Alert severity="error" variant="filled">{otpError}</Alert>
+                </Snackbar>
                 <h1 className="otpVerification_title">Email Verification</h1>
                 <p className="otpverification_info">Please Enter your Mail address for verification</p>
                 <TextField label="Email" placeholder="Enter email address" value={email} onChange={handleChange} variant={"filled"} />
@@ -132,6 +147,7 @@ export default function OtpVerification() {
                         <p className="otpTimerInfo">*Your otp Expires in</p>
                         <OtpTimer handleTimeUp={handleTimeUp} />
                         <TextField placeholder="Enter otp" label="otp" value={tempOtp} onChange={handleOtpChange} />
+                        <p className="formErrors">{errorData}</p>
                     </div>
                     :
                     emailSent ? <div><CircularProgress color="secondary" /></div> : null}
