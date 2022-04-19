@@ -8,7 +8,9 @@ import { persistor, Store } from './store/Store'
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react'
 
-axios.defaults.baseURL = 'https://onlinetestbackendapplication.herokuapp.com/'
+// axios.defaults.baseURL = 'https://onlinetestbackendapplication.herokuapp.com/'
+
+axios.defaults.baseURL = "http://localhost:8080/"
 
 ReactDOM.render(
   

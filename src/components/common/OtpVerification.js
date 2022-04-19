@@ -17,9 +17,9 @@ export default function OtpVerification() {
     const [otp, setOtp] = useState("")
     const [tempOtp, setTempOtp] = useState("")
     const [verified, setVerified] = useState(false)
-    const [otpError, setOtpError] = useState(false)
+    const [otpError, setOtpError] = useState("")
     const [loading, setLoading] = useState(false)
-
+    const [verifyClicked, setVerifyClicked] = useState(false)
 
 
     useEffect(() => {
@@ -31,8 +31,6 @@ export default function OtpVerification() {
                     setOtpGenerated(true)
                 })
                 .catch(err => {
-                    console.log(err)
-                    setOtpGenerated(null)
                 })
         }
         if (otp !== "") {
@@ -43,20 +41,19 @@ export default function OtpVerification() {
                 .then(dt => {
                     if (dt.status === 200) {
                         setVerified(true)
-                        setLoading(false)
                     }
                     else {
-                        console.log(dt)
-                        console.log("test")
-                        setLoading(false)
+                        setOtpError(dt.data.message)
                     }
+                    setLoading(false)
+                    setVerifyClicked(false)
                 })
                 .catch(err => {
-                    console.log(err)
-                    setOtpError(true)
+                    setOtpError("Network Error")
+                    setLoading(false)
                 })
         }
-    }, [emailSent, otp])
+    }, [emailSent, otp, verifyClicked])
 
     const handleChange = ({ target }) => {
         setEmail(target.value)
@@ -91,11 +88,22 @@ export default function OtpVerification() {
     const handleEmailChange = () => {
         setEmailSent(false)
         setOtpGenerated(false)
+        setTempOtp("")
+        setEmail("")
     }
 
     const handleTimeUp = () => {
         setEmailSent(false)
         setOtpGenerated(false)
+    }
+
+    const handleVerify = () => {
+        setLoading(true)
+        setTimeout(() => {
+            setOtp(tempOtp)
+            setVerifyClicked(true)
+        }, 1000)
+
     }
 
     if (verified) {
@@ -105,9 +113,10 @@ export default function OtpVerification() {
     return (
         <div className="otpVerificationContainer">
             <div className="otpVerification">
-                    <Snackbar anchorOrigin={{ vertical: "top", horizontal: "center" }} open={otpError}
-                        autoHideDuration={10000} onClose={() => setOtpError(false)}>
-                        <Alert severity="error" variant="filled">Invalid otp</Alert>
+                    <Snackbar anchorOrigin={{ vertical: "top", horizontal: "center" }} open={otpError.trim().length !== 0}
+                    autoHideDuration = {10000} onClose={()=>setOtpError("")}
+                    >
+                        <Alert severity="error" variant="filled">{otpError}</Alert>
                     </Snackbar>
                 <h1 className="otpVerification_title">Email Verification</h1>
                 <p className="otpverification_info">Please Enter your Mail address for verification</p>
@@ -128,12 +137,8 @@ export default function OtpVerification() {
                     emailSent ? <div><CircularProgress color="secondary" /></div> : null}
                 <div className="verify_button_container">
                     {
-                        otpGenerated !== null ?
-                            loading ? <CircularProgress color="secondary" /> :
-                                <button onClick={() => {
-                                    setLoading(true)
-                                    setTimeout(() => setOtp(tempOtp), 1000)
-                                }} className="verify_button">verify</button> :
+                        otpGenerated ?
+                            loading ? <CircularProgress color="secondary" /> : <button onClick={handleVerify} className="verify_button">verify</button> :
                             <button onClick={handleSubmit} className="verify_button">Send</button>
                     }
 

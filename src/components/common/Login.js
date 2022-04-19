@@ -46,7 +46,6 @@ export default function Login(props) {
     //     return () => window.removeEventListener("resize", handleResize)
     // }, [])
 
-    alert(window.innerHeight+"px X"+window.innerWidth+"px")
 
 
     useEffect(() => {

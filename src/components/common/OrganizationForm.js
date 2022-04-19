@@ -28,7 +28,6 @@ export default function OrganizationForm() {
                 .catch(err => {
                     setLoading(false)
                     setRegErrors("Try again after sometime or Try with a different username or verify your mail")
-                    console.log(err)
                 })
         }
     }, [errorData])
