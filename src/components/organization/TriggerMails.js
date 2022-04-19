@@ -6,6 +6,8 @@ import { LocationContext } from "./Organization"
 
 export default function TriggerMails() {
 
+    document.title = 'Trigger mail'
+
     const setLocation = useContext(LocationContext)
     const currLocation = useLocation().pathname
     const [examId, setExamId] = useState(null)

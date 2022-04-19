@@ -9,6 +9,8 @@ import Results from "./Results"
 
 export default function FilterCandidates() {
 
+    document.title = 'Results'
+
     const examDetails = useSelector(state => state.examDetails.examDetails)
     const [examId, setExamId] = useState('')
     const [selected, setSelected] = useState("")

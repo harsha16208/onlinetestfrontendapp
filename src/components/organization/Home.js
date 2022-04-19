@@ -10,6 +10,8 @@ import SettingsIcon from '@mui/icons-material/Settings';
 
 export default function Home() {
 
+    document.title = 'Home'
+
     const orgId = useSelector(state => state.userDetails.userDetails.userDetails.organizationId)
 
     const [loading, setLoading] = useState(false)
@@ -47,7 +49,7 @@ export default function Home() {
 
 
     if (loading) {
-        return <div> <img src="images/loading.gif" alt="loading..." height={500} width={500} /></div>
+        return <div className="HomeLoading"> <img  className="loading_img" src="images/loadingballs.gif" alt="loading..." /></div>
     }
 
     return (<div className="homeContainer">

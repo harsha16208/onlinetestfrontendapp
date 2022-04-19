@@ -8,6 +8,8 @@ import { Alert, AlertTitle } from "@mui/material";
 
 export default function ApplyForExam() {
 
+    document.title = "Apply for an Exam"
+
     const userDetails = useSelector(state => state.userDetails.userDetails.userDetails)
     const setLocation = useContext(LocationContext)
     const currLocation = useLocation().pathname

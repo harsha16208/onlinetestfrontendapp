@@ -9,6 +9,8 @@ import { useLocation } from "react-router-dom";
 
 export default function PostQuestionsStatus() {
 
+    document.title = 'Post Questions'
+
     const [selected, setSelected] = useState(false)
     const orgId = useSelector(state => state.userDetails.userDetails.userDetails.organizationId)
     const [examId, setExamId] = useState('')

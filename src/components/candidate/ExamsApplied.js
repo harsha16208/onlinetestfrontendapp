@@ -7,6 +7,8 @@ import { LocationContext } from "./Candidate"
 
 export default function ExamsApplied() {
 
+    document.title = "Exams Applied"
+
     const setLocation = useContext(LocationContext)
     const currLocation = useLocation().pathname
     const cId = useSelector(state => state.userDetails.userDetails.userDetails.candidateId)

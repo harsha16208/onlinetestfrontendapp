@@ -9,6 +9,8 @@ import Topics from "./Topics"
 
 export default function CreateExam() {
 
+    document.title = 'Create Exam'
+
     const orgId = useSelector(state => state.userDetails.userDetails.userDetails.organizationId)
     const setLocation = useContext(LocationContext)
     const currLocation = useLocation().pathname

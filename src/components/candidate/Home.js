@@ -11,18 +11,16 @@ import PasswordModal from "../common/PasswordModal"
 
 export default function Home() {
 
-    const setLocation = useContext(LocationContext)
+    document.title = "Home Page"
 
+    const setLocation = useContext(LocationContext)
     const currLocation = useLocation().pathname
-    
     const userDetails = useSelector(state => state.userDetails.userDetails.userDetails)
     const [openPasswordModal, setOpenPasswordModal] = useState(false)
     const [editRequest, setEditRequest] = useState(false)
-
-    const state = useSelector(state =>  state)
+    const state = useSelector(state => state)
 
     useEffect(() => {
-        document.title = "Home Page"
         setLocation(currLocation)
         const reloadCount = sessionStorage.getItem('reloadCount');
         if (reloadCount < 2) {
@@ -53,7 +51,7 @@ export default function Home() {
         <Button variant="contained" color="secondary"
             style={{ marginLeft: "10px" }}
             onClick={handlePasswordModal}><SettingsIcon /> Change Password</Button>
-        
+
         <PasswordModal isModalOpen={openPasswordModal} setIsModalOpen={setOpenPasswordModal} />
         <TableContainer>
             <Table>

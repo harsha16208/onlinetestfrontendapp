@@ -1169,3 +1169,17 @@ body {
 }
 
 /* end of  styles for otp verification*/
+
+.HomeLoading{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background-color: #fff;
+}
+
+.loading_img{
+  height: 50%;
+  width: 50%;
+}

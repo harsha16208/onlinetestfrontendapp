@@ -7,6 +7,8 @@ import { LocationContext } from "./Candidate"
 
 export default function Results() {
 
+    document.title = "Results page"
+
     const setLocation = useContext(LocationContext)
     const currLocation = useLocation().pathname
     const [loading, setLoading] = useState(true)
