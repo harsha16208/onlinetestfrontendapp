@@ -1,4 +1,3 @@
-import "./styles/OtpVerification.css"
 import { Button, Snackbar, TextField } from "@material-ui/core"
 import { useEffect, useState } from "react"
 import axios from "axios"
@@ -30,8 +29,10 @@ export default function OtpVerification() {
             })
                 .then(dt => {
                     setOtpGenerated(true)
+                    setLoading(false)
                 })
                 .catch(err => {
+                    setLoading(false)
                 })
         }
         if (otp !== "") {
@@ -71,8 +72,11 @@ export default function OtpVerification() {
             setError(validate(email))
         }
         else {
-            setError("")
-            setEmailSent(true)
+            setLoading(true)
+            setTimeout(() => {
+                setError("")
+                setEmailSent(true)
+            }, 500)
         }
     }
 
@@ -134,7 +138,7 @@ export default function OtpVerification() {
                     <Alert severity="error" variant="filled">{otpError}</Alert>
                 </Snackbar>
                 <h1 className="otpVerification_title">Email Verification</h1>
-                <p className="otpverification_info">Please Enter your Mail address for verification</p>
+                <div><p className="otpverification_info">Enter your Mail address for verification</p></div>
                 <TextField label="Email" placeholder="Enter email address" value={email} onChange={handleChange} variant={"filled"} />
                 {otpGenerated && !otpError ?
                     <Snackbar anchorOrigin={{ vertical: "top", horizontal: "center" }} open={true}>
@@ -148,26 +152,21 @@ export default function OtpVerification() {
                         <OtpTimer handleTimeUp={handleTimeUp} />
                         <TextField placeholder="Enter otp" label="otp" value={tempOtp} onChange={handleOtpChange} />
                         <p className="formErrors">{errorData}</p>
+                        <div className="verify_button_container"> {loading ? <CircularProgress color="secondary" /> : <button onClick={handleVerify} className="verify_button">verify</button>}</div>
                     </div>
                     :
-                    emailSent ? <div><CircularProgress color="secondary" /></div> : null}
-                <div className="verify_button_container">
-                    {
-                        otpGenerated ?
-                            loading ? <CircularProgress color="secondary" /> : <button onClick={handleVerify} className="verify_button">verify</button> :
-                            <button onClick={handleSubmit} className="verify_button">Send</button>
-                    }
+                    loading ? <CircularProgress color="secondary" /> : <button onClick={handleSubmit} className="verify_button">Send</button>
 
-                </div>
+                }
                 {
                     otpGenerated ?
                         <div>
-                            <p className="otpVerification_info">Want to change email</p>
-                            <Button color="secondary" onClick={handleEmailChange}>Change</Button>
+                            <Button color="secondary" style={{ padding: "10px" }}
+                                onClick={handleEmailChange}>Change Email</Button>
                         </div>
                         : null
                 }
-                <Link to={"/"} className="signInLink"> Already a user? Sign in </Link>
+                <div className="ExistingUserSignin"><Link to={"/"} className="signInLink"> Already a user? Sign in </Link></div>
             </div>
         </div>
     )
