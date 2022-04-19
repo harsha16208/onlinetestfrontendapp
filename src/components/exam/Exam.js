@@ -44,6 +44,7 @@ export default function Exam(props) {
         axios.get(testUrl, config)
             .then(dt => {
                 if (dt.status === 204) {
+                    console.log(dt)
                     setMessage("Please Try At exam time")
                 } else {
                     setQuestionPaper(dt.data)

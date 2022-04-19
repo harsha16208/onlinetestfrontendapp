@@ -83,10 +83,10 @@ export default function QuestionContainer({ sectionAndQuestion, questionPaper,
             <FormControl component="fieldset">
                 <FormLabel component="legend" >Options</FormLabel>
                 <RadioGroup name="options" value={answer} onChange={handleOptionChange}>
-                    <FormControlLabel value={currentQuestion.option1} control={<Radio />} label={currentQuestion.option1} />
-                    <FormControlLabel value={currentQuestion.option2} control={<Radio />} label={currentQuestion.option2} />
-                    <FormControlLabel value={currentQuestion.option3} control={<Radio />} label={currentQuestion.option3} />
-                    <FormControlLabel value={currentQuestion.option4} control={<Radio />} label={currentQuestion.option4} />
+                    <FormControlLabel value={currentQuestion.option1} control={<Radio />} label={<pre>{currentQuestion.option1}</pre>} />
+                    <FormControlLabel value={currentQuestion.option2} control={<Radio />} label={<pre>{currentQuestion.option2}</pre>} />
+                    <FormControlLabel value={currentQuestion.option3} control={<Radio />} label={<pre>{currentQuestion.option3}</pre>} />
+                    <FormControlLabel value={currentQuestion.option4} control={<Radio />} label={<pre>{currentQuestion.option4}</pre>} />
                 </RadioGroup>
             </FormControl>
             {/* <div className={answer === currentQuestion.option1 ? "optionSelected" : "optionContainer"}>

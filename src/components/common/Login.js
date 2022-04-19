@@ -38,7 +38,6 @@ export default function Login(props) {
                 "password": password
             })
                 .then(dt => {
-                    console.log(dt)
                     //store user details in store --> completed
                     dispatch(LoginActionCreator(dt.data))
                     //store user role in state

@@ -32,6 +32,7 @@ export default function MyExams() {
 
         axios.get(`getcurrentexamdetails/?cId=${cId}`, config)
             .then(dt => {
+                console.log(dt)
                 setCurrentExams(dt.data)
                 setResultsFiltered(dt.data)
                 setLoading(false)

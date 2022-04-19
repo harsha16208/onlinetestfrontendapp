@@ -1186,7 +1186,7 @@ body {
 
 @media screen and (max-width: 720px){
   .loading_img{
-    height: 70%;
+    height: 60%;
     width: 100%;
   }
 }

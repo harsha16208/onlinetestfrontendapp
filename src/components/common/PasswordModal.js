@@ -31,13 +31,13 @@ function PasswordModal({ isModalOpen, setIsModalOpen }) {
 
     const handlePasswordUpdate = () => {
         const result = validate()
-        if (Object.keys(result).length === 0){
+        if (Object.keys(result).length === 0) {
             setChangeClicked(true)
             setErrorData({})
         } else {
             setErrorData(result)
         }
-        
+
     }
 
     const validate = () => {
@@ -116,7 +116,7 @@ function PasswordModal({ isModalOpen, setIsModalOpen }) {
         }
     }, [changeClicked])
 
-    const clear = () =>{
+    const clear = () => {
         setVerified(false)
         setNewPassword('')
         setNewPassword2('')
@@ -139,49 +139,54 @@ function PasswordModal({ isModalOpen, setIsModalOpen }) {
                     passwordChangeSuccess ?
                         <><h3 style={{ color: "green" }}> Successfully Updated Your Password</h3></>
                         :
-                        !verified ? <div className='credentialsContainer'>
-                            <p className='credentialsInfo'>Enter Your current Password</p>
-                            <TextField placeholder='Enter Your current password'
-                                value={password}
-                                onChange={handlePasswordChange}
-                                label="Current Password" variant='standard'
-                                type={'password'}
-                            />
-                            <p className='formErrors'>{error}</p>
-                        </div> : <div className='passwordUpdationContainer'>
-                            <p className='credentialsInfo'>Enter Your New Password</p>
-                            <TextField placeholder='Enter your New password'
-                                value={newPassword}
-                                onChange={handleNewPasswordChange}
-                                label="New Password" variant='standard'
-                                type={'password'}
-                            />
-                            <p className='formErrors'>{errorData.newPassword}</p>
-                            <TextField placeholder='Re-Enter your new password'
-                                value={newPassword2}
-                                onChange={handleNewPassword2Change}
-                                label="Re-Enter New Password" variant='standard'
-                                type={'password'}
-                            />
-                            <p className='formErrors'>{errorData.newPassword2}</p>
-                        </div>}
-                <div className='ButtonsContainer'>
-                    {
-                        loading ?
-                            <CircularProgress color='success' />
-                            :
-                            <>
-                                {
-                                    verified ?
-                                        <button className='ModalButton ConfirmButton' onClick={handlePasswordUpdate}>Change</button> :
-                                        passwordChangeSuccess ? null :
-                                            <button className='ModalButton ConfirmButton' onClick={() => setConfirmClicked(true)}>Confirm</button>
-                                }
-                                <button className='ModalButton CloseButton' onClick={handleClose}>close</button>
-                            </>
+                        !verified ?
+                            <div className='credentialsContainer'>
+                                <p className='credentialsInfo'>Enter Your current Password</p>
+                                <TextField placeholder='Enter Your current password'
+                                    value={password}
+                                    onChange={handlePasswordChange}
+                                    label="Current Password" variant='standard'
+                                    type={'password'}
+                                />
+                                <p className='formErrors'>{error}</p>
+                            </div>
+                            : <div className='passwordUpdationContainer'>
+                                <p className='credentialsInfo'>Enter Your New Password</p>
+                                <TextField placeholder='Enter your New password'
+                                    value={newPassword}
+                                    onChange={handleNewPasswordChange}
+                                    label="New Password" variant='standard'
+                                    type={'password'}
+                                />
+                                <p className='formErrors'>{errorData.newPassword}</p>
+                                <TextField placeholder='Re-Enter your new password'
+                                    value={newPassword2}
+                                    onChange={handleNewPassword2Change}
+                                    label="Re-Enter New Password" variant='standard'
+                                    type={'password'}
+                                />
+                                <p className='formErrors'>{errorData.newPassword2}</p>
+                            </div>}
 
-                    }
-                </div>
+                {
+                    loading ?
+                        <CircularProgress color='success' />
+                        :
+
+                        verified ?
+                            <div className='ButtonsContainer'>
+                                <button className='ModalButton ConfirmButton' onClick={handlePasswordUpdate}>Change</button> :
+                                <button className='ModalButton CloseButton' onClick={handleClose}>close</button>
+                            </div> :
+                            <div className='ButtonsContainer'>
+                                <button className='ModalButton CloseButton' onClick={handleClose}>close</button> :
+                                {passwordChangeSuccess ? null :
+                                    <button className='ModalButton ConfirmButton' onClick={() => setConfirmClicked(true)}>Confirm</button>}
+                            </div>
+
+
+
+                }
             </div></>
         , document.getElementById('portal'))
 } export default PasswordModal

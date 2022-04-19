@@ -97,9 +97,5 @@ export default function Home() {
             </Grid>
 
         </Grid>
-
-        <div className="ChartContainer">
-
-        </div>
     </div >)
 }

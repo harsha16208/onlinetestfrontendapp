@@ -47,7 +47,7 @@ export default function Candidate({ component }) {
                         />
                     </div>
                     <div className='logoutContainer'>
-                        <Link to="/logout"><PowerSettingsNewIcon sx={{ color: "white", fontSize: "30px", fontWeight: "800", padding: "20px" }} /> </Link>
+                        <Link to="/logout"><PowerSettingsNewIcon sx={{ fontSize: "30px", fontWeight: "800", padding: "20px" }} /> </Link>
                     </div>
                 </div>
                 <div className="mainContentContainer">
