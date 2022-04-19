@@ -999,14 +999,15 @@ code {
 
 .login_card {
   background-color: rgb(255, 255, 255);
-  height: calc(100vh - 40vh);
-  width: calc(100vw - 50vw);
+  height: 60%;
+  width: 50%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 350px;
-  min-width: 300px;
+  overflow-y: scroll;
+  /* min-height: 350px;
+  min-width: 300px; */
 }
 
 
