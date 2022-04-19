@@ -962,7 +962,13 @@ code {
 
 .logoutContainerAdminPanel {
   text-align: end;
+
 }
+
+.logoutContainerAdminPanel a {
+  color: #19232b;
+}
+
 
 .sidebarTopContainer {
   display: flex;
@@ -1012,7 +1018,7 @@ code {
 
 
 @media (max-width: 620px) {
-  .login_card{
+  .login_card {
     height: 90%;
     width: 90%;
   }

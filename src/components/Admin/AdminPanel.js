@@ -110,7 +110,9 @@ function AdminPanel() {
             />
             <div className='adminPanelInfoAndFilter'>
                 <p className='otpTimerInfo'>Users : {userData.length}</p>
-                <p className='otpTimerInfo'>Want to Filter <FilterAltOutlinedIcon />? You can Filter By username or their role</p>
+                <p className='otpTimerInfo adminhelp'>Want to Filter <FilterAltOutlinedIcon
+                    style={{ position: "relative", top: "5px" }}
+                />? You can Filter By username or their role</p>
                 <div className='filterFormAdminPanel'>
                     <TextField placeholder="Enter Username" label="Username" value={username} onChange={handleUsernameChange}
                         style={{ marginRight: "20px" }}
