@@ -18,6 +18,7 @@ export default function OtpVerification() {
     const [tempOtp, setTempOtp] = useState("")
     const [verified, setVerified] = useState(false)
     const [otpError, setOtpError] = useState(false)
+    const [loading, setLoading] = useState(false)
 
 
 
@@ -31,6 +32,7 @@ export default function OtpVerification() {
                 })
                 .catch(err => {
                     console.log(err)
+                    setOtpGenerated(null)
                 })
         }
         if (otp !== "") {
@@ -39,10 +41,15 @@ export default function OtpVerification() {
                 "otp": otp
             })
                 .then(dt => {
-                    if (dt.status === 200)
+                    if (dt.status === 200) {
                         setVerified(true)
-                    else
-                        setOtpError(true)
+                        setLoading(false)
+                    }
+                    else {
+                        console.log(dt)
+                        console.log("test")
+                        setLoading(false)
+                    }
                 })
                 .catch(err => {
                     console.log(err)
@@ -98,11 +105,10 @@ export default function OtpVerification() {
     return (
         <div className="otpVerificationContainer">
             <div className="otpVerification">
-                {otpError ?
-                    <Snackbar anchorOrigin={{ vertical: "top", horizontal: "center" }} open={true}>
+                    <Snackbar anchorOrigin={{ vertical: "top", horizontal: "center" }} open={otpError}
+                        autoHideDuration={10000} onClose={() => setOtpError(false)}>
                         <Alert severity="error" variant="filled">Invalid otp</Alert>
                     </Snackbar>
-                    : null}
                 <h1 className="otpVerification_title">Email Verification</h1>
                 <p className="otpverification_info">Please Enter your Mail address for verification</p>
                 <TextField label="Email" placeholder="Enter email address" value={email} onChange={handleChange} variant={"filled"} />
@@ -122,8 +128,12 @@ export default function OtpVerification() {
                     emailSent ? <div><CircularProgress color="secondary" /></div> : null}
                 <div className="verify_button_container">
                     {
-                        otpGenerated ?
-                            <button onClick={() => setOtp(tempOtp)} className="verify_button">verify</button> :
+                        otpGenerated !== null ?
+                            loading ? <CircularProgress color="secondary" /> :
+                                <button onClick={() => {
+                                    setLoading(true)
+                                    setTimeout(() => setOtp(tempOtp), 1000)
+                                }} className="verify_button">verify</button> :
                             <button onClick={handleSubmit} className="verify_button">Send</button>
                     }
 
@@ -136,7 +146,7 @@ export default function OtpVerification() {
                         </div>
                         : null
                 }
-            <Link to={"/"} className="signInLink"> Already a user? Sign in </Link>
+                <Link to={"/"} className="signInLink"> Already a user? Sign in </Link>
             </div>
         </div>
     )

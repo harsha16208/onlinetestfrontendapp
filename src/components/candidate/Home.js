@@ -21,8 +21,6 @@ export default function Home() {
 
     const state = useSelector(state =>  state)
 
-    console.log(state)
-
     useEffect(() => {
         document.title = "Home Page"
         setLocation(currLocation)

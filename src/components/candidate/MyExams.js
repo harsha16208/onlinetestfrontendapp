@@ -8,6 +8,8 @@ import { Redirect } from "react-router-dom";
 
 export default function MyExams() {
 
+    document.title = "Exams Page"
+
     const setLocation = useContext(LocationContext)
     const currLocation = useLocation().pathname
     const cId = useSelector(state => state.userDetails.userDetails.userDetails.candidateId)

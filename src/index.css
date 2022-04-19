@@ -18,6 +18,10 @@ code {
   text-decoration: none;
 }
 
+body {
+  height: 100vh;
+}
+
 .main-body {
   height: 100%;
 }
@@ -48,6 +52,7 @@ code {
   left: 0;
   top: 0;
 }
+
 
 .organizationSidebarContainerTop {
   background-color: #19232b;
@@ -1000,7 +1005,7 @@ code {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* min-height: 400px; */
+  min-height: 400px;
 }
 
 .login_card {
@@ -1012,12 +1017,12 @@ code {
   align-items: center;
   justify-content: center;
   overflow-y: scroll;
-  /* min-height: 350px;
-  min-width: 300px; */
+  min-height: 350px;
+  min-width: 300px;
 }
 
 
-@media (max-width: 620px) {
+@media screen and (max-width: 620px) {
   .login_card {
     height: 90%;
     width: 90%;
