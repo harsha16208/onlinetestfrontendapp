@@ -26,7 +26,7 @@ code {
   width: 100%;
 }
 
-.sidebar_menu_icon{
+.sidebar_menu_icon {
   cursor: pointer;
 }
 
@@ -38,7 +38,7 @@ code {
   height: 100vh;
 }
 
-.candidateSidebarContainerTop{
+.candidateSidebarContainerTop {
   background-color: #19232b;
   min-width: 250px;
   float: left;
@@ -46,10 +46,10 @@ code {
   z-index: 20;
   position: absolute;
   left: 0;
-  top:0;
+  top: 0;
 }
 
-.organizationSidebarContainerTop{
+.organizationSidebarContainerTop {
   background-color: #19232b;
   min-width: 250px;
   float: left;
@@ -57,7 +57,7 @@ code {
   z-index: 20;
   position: absolute;
   left: 0;
-  top:0;
+  top: 0;
 }
 
 .candidateSidebarContainer a {
@@ -267,7 +267,7 @@ code {
   padding: 30px;
 }
 
-.examDetailsContainerExamHome{
+.examDetailsContainerExamHome {
   background-color: #19232b;
   height: 100vh;
   width: 100%;
@@ -397,7 +397,7 @@ code {
   color: rgb(120, 120, 120);
 }
 
-.HelpButtonContainer{
+.HelpButtonContainer {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -509,7 +509,7 @@ code {
   padding: 20px;
 }
 
-.infodivContainer{
+.infodivContainer {
   display: flex;
   flex-direction: row;
   padding: 10px;
@@ -714,7 +714,7 @@ code {
   cursor: pointer;
 }
 
-.backButton-UpdateDetails{
+.backButton-UpdateDetails {
   padding: 10px;
   font-size: 16px;
   border: none;
@@ -748,26 +748,26 @@ code {
   cursor: pointer;
 }
 
-.sendButton-MailContainer:hover{
+.sendButton-MailContainer:hover {
   background-color: rgb(26, 155, 225, 0.9);
 }
 
-.sendButtonText{
+.sendButtonText {
   margin: 0px 5px;
 }
 
-.otpTimerInfo{
+.otpTimerInfo {
   font-size: 18px;
   font-weight: bold;
   color: #24313d;
 }
 
-.signInLink{
+.signInLink {
   color: #19232b;
   font-size: 16px;
 }
 
-.signInLink:hover{
+.signInLink:hover {
   color: blue;
 }
 
@@ -796,7 +796,7 @@ code {
   display: none;
 } */
 
-.register_info{
+.register_info {
   padding: 5px;
   text-align: center;
 }
@@ -824,7 +824,7 @@ code {
   padding: 10px;
 }
 
-.role_option_active{
+.role_option_active {
   cursor: pointer;
   color: white;
   width: 100%;
@@ -853,21 +853,21 @@ code {
   margin: 10px 0px;
 }
 
-.registrationform{
+.registrationform {
   width: 70%;
   padding: 20px;
 }
 
-.updateDetailsForm{
+.updateDetailsForm {
   padding: 20px;
 }
 
-.passwordUpdationContainer{
+.passwordUpdationContainer {
   display: flex;
   flex-direction: column;
 }
 
-.forgotPasswordContainer{
+.forgotPasswordContainer {
   display: flex;
   align-items: center;
   height: 100vh;
@@ -875,7 +875,7 @@ code {
   justify-content: center;
 }
 
-.forgotPasswordform{
+.forgotPasswordform {
   display: flex;
   flex-direction: column;
   height: 35vh;
@@ -886,7 +886,7 @@ code {
   border: 1px solid gray;
 }
 
-.otpContainer{
+.otpContainer {
   display: flex;
   align-items: center;
   height: 100vh;
@@ -894,7 +894,7 @@ code {
   justify-content: center;
 }
 
-.otpInfo{
+.otpInfo {
   display: flex;
   flex-direction: column;
   height: 35vh;
@@ -905,7 +905,7 @@ code {
   border: 1px solid gray;
 }
 
-.PasswordChangeContainer{
+.PasswordChangeContainer {
   display: flex;
   align-items: center;
   height: 100vh;
@@ -913,7 +913,7 @@ code {
   justify-content: center;
 }
 
-.PasswordChangeForm{
+.PasswordChangeForm {
   display: flex;
   flex-direction: column;
   height: 35vh;
@@ -924,7 +924,7 @@ code {
   border: 1px solid gray;
 }
 
-.NoAccessOrg{
+.NoAccessOrg {
   height: 100vh;
   width: 100vw;
   display: flex;
@@ -933,45 +933,45 @@ code {
   align-items: center;
 }
 
-.adminPanelLoading{
+.adminPanelLoading {
   height: 100vw;
   width: 100vw;
 }
 
-.AdminPanelContainer{
+.AdminPanelContainer {
   padding: 20px;
 }
 
 
-.deleteButton{
+.deleteButton {
   color: red;
   cursor: pointer;
 }
 
 
-.adminPanelInfoAndFilter{
+.adminPanelInfoAndFilter {
   padding: 10px;
 }
 
 
-.filterFormAdminPanel{
+.filterFormAdminPanel {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 
-.logoutContainerAdminPanel{
+.logoutContainerAdminPanel {
   text-align: end;
 }
 
-.sidebarTopContainer{
+.sidebarTopContainer {
   display: flex;
   justify-content: flex-end;
   align-items: center;
   height: 50px;
 }
 
-.sidebarTopClose{
+.sidebarTopClose {
   background-color: red;
   color: white;
   padding: 10px;
@@ -981,9 +981,85 @@ code {
   cursor: pointer;
 }
 
-.sample{
+.sample {
   font-family: 'Times New Roman', Times, serif;
   background-color: #fff;
   width: 80%;
   padding: 20px;
+}
+
+.login {
+  background-color: purple;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+}
+
+.login_card {
+  background-color: rgb(255, 255, 255);
+  height: calc(100vh - 40vh);
+  width: calc(100vw - 50vw);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 350px;
+  min-width: 300px;
+}
+
+
+@media (max-width: 620px) {
+  .login_card{
+    height: 90%;
+    width: 90%;
+  }
+}
+
+.errors {
+  margin: 5px;
+}
+
+.login_button_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10%;
+}
+
+.login_button {
+  background-color: purple;
+  color: rgb(255, 255, 255);
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  padding: 7% 20%;
+  font-size: 16px;
+  border-radius: 10%;
+}
+
+.login_button:hover {
+  zoom: 110%;
+}
+
+.login_title {
+  color: rgb(120, 120, 120);
+}
+
+.options {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0px;
+}
+
+.options a {
+  color: rgb(120, 120, 120);
+  text-decoration: none;
+  padding: 0px 25px 0px 0px;
+}
+
+.options a:hover {
+  color: blue;
 }

@@ -1,5 +1,4 @@
 import { useState } from "react"
-import "./styles/Login.css"
 import { TextField } from "@material-ui/core";
 import { Alert, AlertTitle } from "@mui/material";
 import { Snackbar } from "@material-ui/core";
@@ -28,6 +27,24 @@ export default function Login(props) {
     const [login, setLogin] = useState({})
     const [loading, setLoading] = useState(false)
     const [loginClicked, setLoginClicked] = useState(false)
+    const [view, setView] = useState("")
+
+
+    // useEffect(() => {
+
+    //     const handleResize = () => {
+    //         if(window.innerWidth < 480) {
+    //             setView("large_login_card")
+    //         } else {
+    //             setView("small_login_card")
+    //         }
+    //     }
+
+
+    //     window.addEventListener("resize", handleResize)
+
+    //     return () => window.removeEventListener("resize", handleResize)
+    // }, [])
 
 
     useEffect(() => {

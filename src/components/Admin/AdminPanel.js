@@ -42,10 +42,9 @@ function AdminPanel() {
         if (authenticated) {
             axios.get(url, config)
                 .then(dt => {
-                    console.log(dt)
+                    window.location.reload()
                 })
                 .catch(err => {
-                    console.log(err)
                 })
         }
         setLoading(true)
