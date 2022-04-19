@@ -10,6 +10,8 @@ import FilterAltOutlinedIcon from '@mui/icons-material/FilterAltOutlined';
 
 function AdminPanel() {
 
+    document.title = "ADMIN Panel"
+
     const [userData, setUserData] = useState([])
     const [loading, setLoading] = useState(true)
     const [isAuthenticationModalOpen, setAuthenticationModalOpen] = useState(false)

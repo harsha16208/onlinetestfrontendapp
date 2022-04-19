@@ -24,6 +24,7 @@ export default function Home() {
     console.log(state)
 
     useEffect(() => {
+        document.title = "Home Page"
         setLocation(currLocation)
         const reloadCount = sessionStorage.getItem('reloadCount');
         if (reloadCount < 2) {
